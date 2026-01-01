@@ -37,60 +37,58 @@ pip install -r requirements.txt
 jupyter notebook
 Open: notebooks/01_profitability_model.ipynb
 
-Model Overview
-Contribution Margin
+## Model Overview
+
+### Contribution Margin
 
 For each SKU:
 
-Revenue = Price × Units
-
-Gross Profit = (Price - Unit Cost) × Units
-
-CM% = (Price - Unit Cost) / Price
-
-Price Elasticity Scenario
-
-Demand response is estimated using:
-
-%ΔQ = Elasticity × %ΔP
-
-For a given price change:
-
-New Price = Price × (1 + %ΔP)
-
-New Units = Units × (1 + %ΔQ)
-
-Recompute revenue and profit under each scenario
-
-Outputs
-
-SKU-level profitability table (revenue, profit, CM%)
-
-Scenario comparison summary:
-
-total revenue
-
-total profit
-
-total units
-
-delta vs. baseline
-
-Assumptions & Notes
-
-Elasticity is assigned at category level for simplicity (common for early-stage FP&A analysis).
-
-The project is designed to be interpretable and easy to extend (e.g., regression-based elasticity, time-series sales, dashboards).
-
-Future Enhancements
-
-Estimate elasticity from historical data (regression)
-
-Add seasonality and promotions
-
-Build a dbt/SQL transformation layer
-
-Publish a Power BI dashboard for executive reporting
+- **Revenue** = Price × Units  
+- **Gross Profit** = (Price − Unit Cost) × Units  
+- **CM%** = (Price − Unit Cost) / Price  
 
 ---
 
+### Price Elasticity Scenario
+
+Demand response is estimated using:
+
+- **%ΔQ = Elasticity × %ΔP**
+
+For a given price change:
+
+- **New Price** = Price × (1 + %ΔP)  
+- **New Units** = Units × (1 + %ΔQ)  
+
+Revenue and profit are recomputed under each scenario.
+
+---
+
+## Outputs
+
+### SKU-level profitability
+- Revenue  
+- Gross profit  
+- Contribution margin (%)
+
+### Scenario comparison summary
+- Total revenue  
+- Total profit  
+- Total units  
+- Delta vs. baseline  
+
+---
+
+## Assumptions & Notes
+
+- Elasticity is assigned at the **category level** for simplicity (a common approach in early-stage FP&A analysis).
+- The model is designed to be **interpretable and easy to extend**, rather than statistically complex.
+
+---
+
+## Future Enhancements
+
+- Estimate elasticity from historical data using regression  
+- Add seasonality and promotion effects  
+- Build a dbt / SQL transformation layer  
+- Publish a Power BI dashboard for executive reporting  
